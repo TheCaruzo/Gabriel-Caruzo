@@ -1,8 +1,10 @@
+import random
 from jogo.ativos import itens, mapa, tesouro
 from jogo.Personagens import Player, Monstros
 
-def interagir_item(p, pocoes):
-    mochila = [ pocoes ]
+def interagir_item(p, mochila):
+    mochila.append(mochila)
+    
     
     """
     - lista os itens da mochila
@@ -11,7 +13,22 @@ def interagir_item(p, pocoes):
     """
     pass
 
-def movimentar(p1, move):
+def movimentar(p1, move, mochila):
+    random.choice([True , False])
+    if move:
+        acao = random.choices(["nada", "item", "monstro"], weights=[0.40, 0.20, 0.40])[0]
+        if acao == "nada":
+            print(f"{p1}, andou dentro da caverna e não encoutrou nada")
+        elif acao == "item":
+                roll1 = random.choices(itens.pocoes["Poção de Vida 1", "Poção de Vida 2", "Poção de força 1", "Poção de força 2 ", "Poção de defesa"], weights=[0.50, 0.30, 0.10, 0.05, 0.05])[0]
+                potion = roll1
+                print(f"Parabéns, o nosso herói achou uma {roll1}")
+                mochila.append(potion)
+                mochila = []
+        elif acao == "monstro":
+            print("O nosso herói encontrou um monstro")
+            return #combate
+    return True
     """
     - movimenta o aventureiro
     - se ele andou, seleciona uma das opções: nada, item ou monstro

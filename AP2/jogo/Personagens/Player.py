@@ -3,6 +3,7 @@ import random
 posicao = [0, 0]
 def p1():
     global hp
+    global status
     hp = random.randint(100, 120)
     status = { "fo" : random.randint(10, 18),
                 "de": random.randint(10, 18)

@@ -10,6 +10,6 @@ def map(personagem, tesouro):
         print()
 
 if __name__ == "__main__":
-    mapa([0, 0], [2, 4])
+    map([0, 0], [2, 4])
     print("-" * 19)
-    mapa([2, 1], [5, 0])
+    map([2, 1], [5, 0])
